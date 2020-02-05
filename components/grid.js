@@ -7,6 +7,7 @@ import Layout from '../constants/layout.js';
 import Square from './square.js';
 
 export default function Grid() {
+  const message = ()=>{console.log('Only the top-left square works, check the code')};
   return (
     <GameContext.Provider value={defaultContext}>
       <View style={styles.container}>
@@ -16,7 +17,7 @@ export default function Grid() {
           </View>
           <View style={styles.item}>
             <TouchableOpacity styles={styles.button}
-                onPress={()=>{gameContext.togglePlayer()}}>
+                onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
@@ -28,19 +29,19 @@ export default function Grid() {
         <View style={styles.row}>
           <View style={styles.item}>
             <TouchableOpacity styles={styles.button}
-                onPress={()=>{gameContext.togglePlayer()}}>
+                onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.item}>
             <TouchableOpacity styles={styles.button}
-                onPress={()=>{gameContext.togglePlayer()}}>
+                onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.item}>
             <TouchableOpacity styles={styles.button}
-                onPress={()=>{gameContext.togglePlayer()}}>
+                onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
@@ -49,19 +50,19 @@ export default function Grid() {
         <View style={styles.row}>
           <View style={styles.item}>
             <TouchableOpacity styles={styles.button}
-                onPress={()=>{gameContext.togglePlayer()}}>
+                onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.item}>
             <TouchableOpacity styles={styles.button}
-                onPress={()=>{gameContext.togglePlayer()}}>
+                onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.item}>
             <TouchableOpacity styles={styles.button}
-                onPress={()=>{gameContext.togglePlayer()}}>
+                onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
