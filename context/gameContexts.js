@@ -2,21 +2,23 @@ import { createContext } from 'react';
 
 export const defaultContext = {
 	
-	// 0 for circle, 1 for cross
-	player : 0,
-	togglePlayer : ()=>{
-		console.log(defaultContext.player);
-		if(defaultContext.player==0){
-			defaultContext.player=1;
-		}else{
-			defaultContext.player=0;
-		}
-	},
-	// 0 for 
+	// 1 for circle, 2 for cross
+	player : 1,
+	togglePlayer : (cb)=>{
+	    console.log('Toggle Player Triggered ');
+	    if(defaultContext.player==1){
+	      defaultContext.player=2;
+	    }else{
+	      defaultContext.player=1;
+	    }
+	    cb(defaultContext.player);
+	  },
+	// there has to be a board  
+	board: null,
+
+	// is the game over yet
 	gameState : 0,
-	toggleGameState: (newState)=>{
-		defaultContext.gameState = newState;
-	}
+	chageGameState: ()=>{}
 }
 
-export default  createContext(defaultContext);
+export default createContext(defaultContext);
