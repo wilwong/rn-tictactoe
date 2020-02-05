@@ -15,7 +15,7 @@ export default function Square(props) {
   console.log(">>Player Status: ", playerStatus);
 	return (
     <View>
-    	<TouchableOpacity styles={styles.button}
+    	<TouchableOpacity style={styles.button}
       		onPress={()=>{gameContext.togglePlayer(setPlayerStatus)}}>
           <Text>Press</Text>
     	</TouchableOpacity>

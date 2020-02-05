@@ -16,7 +16,7 @@ export default function Grid() {
             <Square/>
           </View>
           <View style={styles.item}>
-            <TouchableOpacity styles={styles.button}
+            <TouchableOpacity style={styles.button}
                 onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
@@ -28,19 +28,19 @@ export default function Grid() {
      
         <View style={styles.row}>
           <View style={styles.item}>
-            <TouchableOpacity styles={styles.button}
+            <TouchableOpacity style={styles.button}
                 onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.item}>
-            <TouchableOpacity styles={styles.button}
+            <TouchableOpacity style={styles.button}
                 onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.item}>
-            <TouchableOpacity styles={styles.button}
+            <TouchableOpacity style={styles.button}
                 onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
@@ -49,19 +49,19 @@ export default function Grid() {
 
         <View style={styles.row}>
           <View style={styles.item}>
-            <TouchableOpacity styles={styles.button}
+            <TouchableOpacity style={styles.button}
                 onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.item}>
-            <TouchableOpacity styles={styles.button}
+            <TouchableOpacity style={styles.button}
                 onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.item}>
-            <TouchableOpacity styles={styles.button}
+            <TouchableOpacity style={styles.button}
                 onPress={message}>
                 <Text>Press</Text>
             </TouchableOpacity>
@@ -94,4 +94,10 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     position: 'relative'
   },
+  button:{
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
