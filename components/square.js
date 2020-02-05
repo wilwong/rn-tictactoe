@@ -10,7 +10,7 @@ import Layout from '../constants/layout.js';
 
 export default function Square(props) {
 	const gameContext= useContext(GameContext);
-  const [playerStatus, setPlayerStatus] = useState(gameContext.playerStatus);
+  const [playerStatus, setPlayerStatus] = useState(gameContext.player);
   console.log("Square Rerendered");
   console.log(">>Player Status: ", playerStatus);
 	return (
