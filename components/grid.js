@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 import GameContext,{defaultContext} from '../context/gameContexts.js';
@@ -7,69 +7,39 @@ import Layout from '../constants/layout.js';
 import Square from './square.js';
 
 export default function Grid() {
-  const message = ()=>{console.log('Only the top-left square works, check the code')};
-  return (
-    <GameContext.Provider value={defaultContext}>
-      <View style={styles.container}>
-        <View style={styles.row}>
-          <View style={styles.item}>
-            <Square/>
-          </View>
-          <View style={styles.item}>
-            <TouchableOpacity style={styles.button}
-                onPress={message}>
-                <Text>Press</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.item}>
-            <Square />
-          </View>
-        </View>
-     
-        <View style={styles.row}>
-          <View style={styles.item}>
-            <TouchableOpacity style={styles.button}
-                onPress={message}>
-                <Text>Press</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.item}>
-            <TouchableOpacity style={styles.button}
-                onPress={message}>
-                <Text>Press</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.item}>
-            <TouchableOpacity style={styles.button}
-                onPress={message}>
-                <Text>Press</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+  const [state, dispatch] = useReducer(defaultContext.gameStateReducer,defaultContext.gameState);
+  defaultContext.gameStateDispatch = dispatch
 
-        <View style={styles.row}>
-          <View style={styles.item}>
-            <TouchableOpacity style={styles.button}
-                onPress={message}>
-                <Text>Press</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.item}>
-            <TouchableOpacity style={styles.button}
-                onPress={message}>
-                <Text>Press</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.item}>
-            <TouchableOpacity style={styles.button}
-                onPress={message}>
-                <Text>Press</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
+  if(state!=0){
+    return(
+      <View style={styles.container}>
+        {state==1 && <Text>X wins</Text>}
+        {state==-1 && <Text>O wins</Text>}
+        {state==2 && <Text>You Tied</Text>}
+        <TouchableOpacity onPress={()=>dispatch({type:'reset'})}>
+          <Text>Reset</Text>
+        </TouchableOpacity>
       </View>
-    </GameContext.Provider>
-  );
+    )
+  }else{
+    return (
+      <GameContext.Provider value={defaultContext}>
+        <View style={styles.container}>
+          {defaultContext.board.map((rol,i)=>{
+            return(
+              <View style={styles.row} key={i}>
+                {defaultContext.board[i].map((item,j)=>{
+                  return(
+                    <Square key={j} row={i} col={j} />
+                  )
+                })}
+              </View>
+            )
+          })}
+        </View>
+      </GameContext.Provider>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -85,19 +55,5 @@ const styles = StyleSheet.create({
     width: '100%',
     display: 'flex',
     flexDirection:'row',
-  },
-  item:{
-    width: Layout.width/3,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth :1,
-    borderColor: 'black',
-    position: 'relative'
-  },
-  button:{
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
   }
 });
