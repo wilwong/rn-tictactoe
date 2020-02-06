@@ -1,12 +1,11 @@
-import { AppLoading } from 'expo';
-import { Asset } from 'expo-asset';
-import React, {useState} from 'react';
+import { AppLoading,  registerRootComponent } from 'expo'
+import { Asset } from 'expo-asset'
+import React, {useState} from 'react'
 
-import Grid from './components/grid.js';
+import AppContainter from './src/app'
 
-export default function App(props) {
-  const [isLoadingComplete, setLoadingComplete] = useState(false);
-
+const App = (props)=>{
+  const [isLoadingComplete, setLoadingComplete] = useState(false)
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading
@@ -14,11 +13,11 @@ export default function App(props) {
         onError={handleLoadingError}
         onFinish={() => handleFinishLoading(setLoadingComplete)}
       />
-    );
+    )
   } else {
     return (
-      <Grid />
-    );
+      <AppContainter />
+    )
   }
 }
 
@@ -28,15 +27,16 @@ async function loadResourcesAsync() {
       require('./assets/circle.png'),
       require('./assets/cross.png'),
     ]),
-  ]);
+  ])
 }
 
 function handleLoadingError(error) {
   // In this case, you might want to report the error to your error reporting
   // service, for example Sentry
-  console.warn(error);
+  console.warn(error)
 }
 
 function handleFinishLoading(setLoadingComplete) {
-  setLoadingComplete(true);
+  setLoadingComplete(true)
 }
+registerRootComponent(App);
