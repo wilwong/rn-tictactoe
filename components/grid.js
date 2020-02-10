@@ -5,6 +5,7 @@ import GameContext,{defaultContext} from '../context/gameContexts.js';
 
 import Layout from '../constants/layout.js';
 import Square from './square.js';
+import ReduxSquare from './reduxSquare';
 
 export default function Grid() {
   const [state, dispatch] = useReducer(defaultContext.gameStateReducer,defaultContext.gameState);
@@ -29,9 +30,16 @@ export default function Grid() {
             return(
               <View style={styles.row} key={i}>
                 {defaultContext.board[i].map((item,j)=>{
-                  return(
-                    <Square key={j} row={i} col={j} />
-                  )
+                  if(i==0&&j==0){
+                    return(
+                      <ReduxSquare key={j} row={i} col={j} />
+                    )
+                  }else{
+                    return(
+                      <Square key={j} row={i} col={j} />
+                    )
+                  }
+                  
                 })}
               </View>
             )

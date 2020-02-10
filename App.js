@@ -4,6 +4,9 @@ import React, {useState} from 'react';
 
 import Grid from './components/grid.js';
 
+import { Provider } from 'react-redux';
+import store from './store';
+
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
 
@@ -17,7 +20,9 @@ export default function App(props) {
     );
   } else {
     return (
-      <Grid />
+      <Provider store={store}>
+        <Grid />
+      </Provider>
     );
   }
 }
