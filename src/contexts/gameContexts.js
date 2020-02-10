@@ -70,7 +70,8 @@ export const defaultContext = {
 					})
 					defaultContext.gameState = boardSum == 9 ? 2 : defaultContext.gameState;
 				}
-			    return defaultContext.gameState
+			  // return the reduced next state to the component 
+        return defaultContext.gameState
 			case 'reset':
 				defaultContext.board = [[0,0,0], [0,0,0], [0,0,0]];
 				defaultContext.player = 1
