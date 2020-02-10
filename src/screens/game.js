@@ -4,6 +4,6 @@ import Grid from '../components/grid.js';
 
 export default (props) => {
   return (
-    <Grid />
+    <Grid navigation={props.navigation}/>
   );
 }

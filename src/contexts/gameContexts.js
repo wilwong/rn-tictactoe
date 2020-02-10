@@ -23,7 +23,7 @@ export const defaultContext = {
 		defaultContext.gameStateDispatch({
 			type: 'play'
 		})
-		if(cb) cb(defaultContext.player)
+		if(typeof cb == 'function') cb(defaultContext.player)
 	},
 
 	// states: 0=playing, 1=Xwins, -1=Owins, 2=tie
@@ -77,7 +77,7 @@ export const defaultContext = {
 				defaultContext.gameState = 0
 				return defaultContext.gameState
 			default:
-				console.log('fucked up action');
+				console.log('fucked up action', action.type);
 		}
 	}
 }

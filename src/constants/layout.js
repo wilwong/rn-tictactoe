@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native'
+import Colors from './colors'
 
 const {width, height} = Dimensions.get('window')
 
@@ -6,7 +7,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: '#c51162',
+    backgroundColor: Colors.background,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -15,14 +16,6 @@ const styles = StyleSheet.create({
     width: '100%',
     display: 'flex',
     flexDirection:'row',
-  },
-  lowerThrid:{
-    height: width / 3,
-    width: '100%',
-    display: 'flex',
-    flexDirection:'row',
-    alignItems: 'center',
-    justifyContent: 'center',
   }
 });
 

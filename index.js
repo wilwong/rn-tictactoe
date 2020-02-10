@@ -1,6 +1,8 @@
 import { AppLoading,  registerRootComponent } from 'expo'
 import { Asset } from 'expo-asset'
-import React, {useState} from 'react'
+import * as Font from 'expo-font';
+import React, { useState } from 'react'
+import { Ionicons } from '@expo/vector-icons';
 
 import AppContainter from './src/app'
 
@@ -27,6 +29,11 @@ async function loadResourcesAsync() {
       require('./assets/circle.png'),
       require('./assets/cross.png'),
     ]),
+    Font.loadAsync({
+      // This is the font icons that we are using for 
+      //our general UI, and the circles and crosses
+      ...Ionicons.font,
+    }),
   ])
 }
 
