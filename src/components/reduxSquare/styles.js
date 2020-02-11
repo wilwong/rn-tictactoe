@@ -1,5 +1,5 @@
 import { StyleSheet }  from 'react-native';
-import Layout from '../../constants/layout.js'
+import Layout from '@constants/layout.js'
 
 const styles = StyleSheet.create({
   button:{

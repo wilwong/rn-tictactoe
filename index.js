@@ -2,14 +2,11 @@ import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import React, {useState} from 'react';
 
-import Grid from './components/grid.js';
+import AppContainer from './src/app.js';
 
-import { Provider } from 'react-redux';
-import store from './store';
-
-export default function App(props) {
+const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
-
+  console.log('wtf');
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading
@@ -20,9 +17,7 @@ export default function App(props) {
     );
   } else {
     return (
-      <Provider store={store}>
-        <Grid />
-      </Provider>
+      <AppContainer />
     );
   }
 }
@@ -45,3 +40,5 @@ function handleLoadingError(error) {
 function handleFinishLoading(setLoadingComplete) {
   setLoadingComplete(true);
 }
+
+export default App;

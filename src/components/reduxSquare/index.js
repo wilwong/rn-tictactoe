@@ -2,18 +2,18 @@ import React, {useContext, useState} from 'react'
 import { View, Text, TouchableOpacity,Image } from 'react-native'
 
 // If you use context
-import GameContext from '../../context/gameContexts.js'
+import GameContext from '@contexts/gameContexts.js'
 
 // Alternatively, if you use Redux
 import { connect } from 'react-redux'
-import { ActionWithPayload, ActionWithoutPayload } from '../../actions'
+import { ActionWithPayload, ActionWithoutPayload } from '@actions/'
 
 
 // Styles
 import styles from './styles.js';
 // Image Assets
-import circle from '../../assets/circle.svg'
-import cross from '../../assets/cross.svg'
+import circle from '@assets/circle.svg'
+import cross from '@assets/cross.svg'
 
 
 const Square = (props) => {

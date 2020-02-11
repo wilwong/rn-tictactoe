@@ -1,10 +1,10 @@
 import React, { useReducer } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-import GameContext,{defaultContext} from '../context/gameContexts.js';
+import GameContext,{defaultContext} from '@contexts/gameContexts.js';
 
-import Layout from '../constants/layout.js';
-import Square from './square.js';
+import Layout from '@constants/layout.js';
+import Square from '@components/square.js';
 import ReduxSquare from './reduxSquare';
 
 export default function Grid() {
