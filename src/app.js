@@ -12,7 +12,7 @@ import GameScreen from '@screens/game'
 import GameEndScreen from '@screens/gameEnd'
 import SettingsScreen from '@screens/settings'
 
-import theme from '@constants/paperTheme'
+import theme from './paperTheme'
 
 
 const NavigatorConfigs = {

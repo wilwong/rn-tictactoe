@@ -8,7 +8,6 @@ import AppContainer from './src/app';
 
 const App = (props) => {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
-  console.log('wtf');
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return (
       <AppLoading

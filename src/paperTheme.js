@@ -8,4 +8,9 @@ export default {
     primary: '#3498db',
     accent: '#f1c40f',
   },
+  font :{
+  	regular: {
+  		fontSize: 50,
+  	}
+  }
 }
