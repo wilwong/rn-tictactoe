@@ -25,10 +25,10 @@ const App = (props)=>{
 
 async function loadResourcesAsync() {
   await Promise.all([
-    Asset.loadAsync([
-      require('./assets/circle.png'),
-      require('./assets/cross.png'),
-    ]),
+    // Asset.loadAsync([
+    //   require('./assets/circle.png'),
+    //   require('./assets/cross.png'),
+    // ]),
     Font.loadAsync({
       // This is the font icons that we are using for 
       //our general UI, and the circles and crosses

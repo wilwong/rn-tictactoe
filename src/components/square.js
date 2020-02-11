@@ -1,8 +1,8 @@
 import React, {useContext, useState} from 'react';
 import { StyleSheet, View, Text, TouchableOpacity,Image } from 'react-native';
 
-import circle from '@assets/circle.svg';
-import cross from '@assets/cross.svg';
+import Circle from '@components/icons/circle';
+import Cross from '@components/icons/cross';
 
 import GameContext from '@contexts/gameContexts.js';
 
@@ -23,13 +23,13 @@ export default function Square(props) {
   }else if(squareStatus<0){
     return(
       <View style={styles.item}>
-        <Image source={cross} style={styles.button}/>
+        <Cross />
       </View>
     )
   }else{
     return(
       <View style={styles.item}>
-        <Image source={circle} style={styles.button}/>
+        <Circle />
       </View>
     )
   }
