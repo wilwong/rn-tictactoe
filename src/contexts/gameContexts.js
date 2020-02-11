@@ -23,7 +23,7 @@ export const defaultContext = {
 		defaultContext.gameStateDispatch({
 			type: 'play'
 		})
-		if(cb) cb(defaultContext.player)
+		if(typeof cb == 'function') cb(defaultContext.player)
 	},
 
 	// states: 0=playing, 1=Xwins, -1=Owins, 2=tie
@@ -70,14 +70,15 @@ export const defaultContext = {
 					})
 					defaultContext.gameState = boardSum == 9 ? 2 : defaultContext.gameState;
 				}
-			    return defaultContext.gameState
+			  // return the reduced next state to the component 
+        return defaultContext.gameState
 			case 'reset':
 				defaultContext.board = [[0,0,0], [0,0,0], [0,0,0]];
 				defaultContext.player = 1
 				defaultContext.gameState = 0
 				return defaultContext.gameState
 			default:
-				console.log('fucked up action');
+				console.log('fucked up action', action.type);
 		}
 	}
 }

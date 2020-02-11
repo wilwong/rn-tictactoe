@@ -24,6 +24,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "entryPoint": "./index.js",
     "ios": {
       "supportsTablet": true
     }
