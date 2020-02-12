@@ -11,7 +11,7 @@ import Layout from '@constants/layout'
 export default (props) => {
   return (
     <View style={[CommonStyles.container, CommonStyles.pinkBackground]}>
-      <Headline style={styles.headline}>Tic-Tac-T.O.</Headline>
+      <Headline style={styles.headline}> Tic-Tac-T.O. </Headline>
       <Button 
         style={styles.button}
         mode="contained" 
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   headline: {
     color: Colors.text,
     fontSize: Layout.baseFontSize * 2.5,
+    lineHeight: Layout.baseFontSize * 2.5,
     marginBottom: Layout.marginSize
   },
   button:{

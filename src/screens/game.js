@@ -1,9 +1,14 @@
-import React from 'react';
+import React from 'react'
+import { View } from 'react-native'
 
-import Grid from '../components/grid.js';
+import Grid from '../components/grid.js'
+
+import CommonStyles from '@constants/commonStyles'
 
 export default (props) => {
   return (
-    <Grid navigation={props.navigation}/>
+    <View style={[CommonStyles.container, CommonStyles.pinkBackground]}>
+      <Grid navigation={props.navigation}/>
+    </View>
   );
 }

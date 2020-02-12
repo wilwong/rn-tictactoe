@@ -9,6 +9,11 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  row:{
+    display: 'flex',
+    width: '100%',
+    flexDirection: 'row'
+  },
   pinkBackground: {
     backgroundColor: Colors.background
   }

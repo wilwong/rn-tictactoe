@@ -1,12 +1,12 @@
-import React, {useContext, useState} from 'react';
-import { StyleSheet, View, Text, TouchableOpacity,Image } from 'react-native';
+import React, {useContext, useState} from 'react'
+import { StyleSheet, View, Text, TouchableOpacity,Image } from 'react-native'
 
-import Circle from '@components/icons/circle';
-import Cross from '@components/icons/cross';
+import Circle from '@components/icons/circle'
+import Cross from '@components/icons/cross'
 
-import GameContext from '@contexts/gameContexts.js';
+import GameContext from '@contexts/gameContexts'
 
-import Layout from '@constants/layout.js';
+import Layout from '@constants/layout'
 
 export default function Square(props) {
 	const gameContext= useContext(GameContext);
