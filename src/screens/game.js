@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import Grid from '../components/grid.js'
+import Grid from '@components/grid'
 
 import CommonStyles from '@constants/commonStyles'
 
