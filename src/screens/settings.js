@@ -11,19 +11,13 @@ import Colors from '@constants/colors'
 export default (props) => {
   return (
     <View style={[CommonStyles.container, CommonStyles.pinkBackground]}>
-      <BackToHomeButton style={styles.button}/>
+      <BackToHomeButton />
       <Title style={{color: Colors.text}}>Settings Screen</Title>
       <Paragraph style={{color: Colors.text}}>TicTacTO v1</Paragraph>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  button:{
-    position: 'absolute',
-    top:0,
-    left:0,
-    marginHorizontal: Layout.marginSize,
-    marginVertical: Layout.marginSize / 2
-  }
-})
+// const styles = StyleSheet.create({
+
+// })

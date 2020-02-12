@@ -11,19 +11,12 @@ export default (props) => {
   return (
     <View style={[CommonStyles.container, CommonStyles.pinkBackground]}>
       <TicTacTo/>
-      <BackToHomeButton style={styles.button}/>
+      <BackToHomeButton />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  button:{
-    position: 'absolute',
-    top:0,
-    left:0,
-    marginHorizontal: Layout.marginSize,
-    marginVertical: Layout.marginSize / 2
-  },
   tictacto:{
     position: 'absolute',
     top:0,
