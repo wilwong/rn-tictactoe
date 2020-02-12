@@ -12,27 +12,24 @@ import CommonStyles from '@constants/commonStyles'
 
 
 export default (props)=> {
-  const gameContext = useContext(GameContext);
-  const [state, dispatch] = useReducer(gameContext.gameStateReducer,gameContext.gameState)
-  gameContext.gameStateDispatch = dispatch
-  
+  const gameContext = useContext(GameContext)
   return (
-      <View style={ styles.fixedWidthSquare }>
-        <Image source={gridImage} style={[styles.fixedWidthSquare, styles.absoluteAlignTopCorner]}/>
-        <View style={[styles.fixedWidthSquare, styles.absoluteAlignTopCorner]}>
-          {gameContext.board.map((rol,i)=>{
-            return(
-              <View style={CommonStyles.row} key={i}>
-                {gameContext.board[i].map((item,j)=>{
-                  return(
-                    <Square key={j} row={i} col={j} />
-                  )
-                })}
-              </View>
-            )
-          })}
-        </View>
+    <View style={ styles.fixedWidthSquare }>
+      <Image source={gridImage} style={[styles.fixedWidthSquare, styles.absoluteAlignTopCorner]}/>
+      <View style={[styles.fixedWidthSquare, styles.absoluteAlignTopCorner]}>
+        {gameContext.board.map((rol,i)=>{
+          return(
+            <View style={CommonStyles.row} key={i}>
+              {gameContext.board[i].map((item,j)=>{
+                return(
+                  <Square key={j} row={i} col={j} />
+                )
+              })}
+            </View>
+          )
+        })}
       </View>
+    </View>
   )
 }
 

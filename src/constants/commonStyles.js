@@ -14,7 +14,9 @@ export default StyleSheet.create({
   row:{
     display: 'flex',
     width: '100%',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   pinkBackground: {
     backgroundColor: Colors.background

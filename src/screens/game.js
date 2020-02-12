@@ -15,11 +15,3 @@ export default (props) => {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  tictacto:{
-    position: 'absolute',
-    top:0,
-    left:0
-  }
-})
