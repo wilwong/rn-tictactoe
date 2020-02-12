@@ -56,7 +56,7 @@ export const defaultContext = {
           let boardSum = 0;
           board.map((row,i)=>{
             row.map((col,j)=>{
-              boardSum = boardSum + Math.abs(col);
+              boardSum = boardSum + Math.abs(col)
             })
           })
           defaultContext.gameState = boardSum == 9 ? 2 : defaultContext.gameState
@@ -64,8 +64,8 @@ export const defaultContext = {
         // return the reduced next state to the component 
         return defaultContext.gameState
       case 'reset':
-        defaultContext.board = [[0,0,0], [0,0,0], [0,0,0]];
-        defaultContext.player = 1
+        defaultContext.board = [[0,0,0], [0,0,0], [0,0,0]]
+        defaultContext.togglePlayer(1)
         defaultContext.gameState = 0
         return defaultContext.gameState
       default:
