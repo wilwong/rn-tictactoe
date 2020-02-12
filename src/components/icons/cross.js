@@ -8,8 +8,8 @@ export default function TabBarIcon(props) {
     <Ionicons
       name='md-close'
       size={props.size || 50}
-      // style={{ marginBottom: -3 }}
-      // color={props.focused ? Colors.tabIconSelected : Colors.tabIconDefault}
+      color={Colors.text}
+      {...props}
     />
   );
 }

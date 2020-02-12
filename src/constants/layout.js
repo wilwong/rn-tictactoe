@@ -1,11 +1,13 @@
 import { Dimensions } from 'react-native'
-import Colors from './colors'
 
 const {width, height} = Dimensions.get('window')
+
+const baseFontSize = 16
 
 export default {
 	width,
 	height,
-  baseFontSize: 16,
-  marginSize: 16
+  baseFontSize,
+  marginSize: baseFontSize,
+  innerWidth: width - (baseFontSize*2)
 }

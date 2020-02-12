@@ -1,8 +1,8 @@
 import { AppLoading,  registerRootComponent } from 'expo'
 import { Asset } from 'expo-asset'
-import * as Font from 'expo-font';
+import * as Font from 'expo-font'
 import React, { useState } from 'react'
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons'
 
 import AppContainter from './src/app'
 
@@ -25,10 +25,9 @@ const App = (props)=>{
 
 async function loadResourcesAsync() {
   await Promise.all([
-    // Asset.loadAsync([
-    //   require('./assets/circle.png'),
-    //   require('./assets/cross.png'),
-    // ]),
+    Asset.loadAsync([
+      require('./assets/grid.png'),
+    ]),
     Font.loadAsync({
       // This is the font icons that we are using for 
       //our general UI, and the circles and crosses
@@ -46,4 +45,4 @@ function handleLoadingError(error) {
 function handleFinishLoading(setLoadingComplete) {
   setLoadingComplete(true)
 }
-registerRootComponent(App);
+registerRootComponent(App)
