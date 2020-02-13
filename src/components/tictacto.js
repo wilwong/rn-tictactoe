@@ -60,7 +60,6 @@ export default (props)=> {
 
   return (
     <GameContext.Provider value={defaultContext}>
-      <View>
         <Grid key={gameKey} disabled={gameState!==0}/>
         {  gameState == 0 &&
           <View style={[CommonStyles.row, styles.displayView]}>
@@ -98,7 +97,6 @@ export default (props)=> {
             </Button>
           }
         </View>
-      </View>
     </GameContext.Provider>
   )
 }

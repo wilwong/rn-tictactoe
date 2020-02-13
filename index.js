@@ -2,9 +2,16 @@ import { AppLoading,  registerRootComponent } from 'expo'
 import { Asset } from 'expo-asset'
 import * as Font from 'expo-font'
 import React, { useState } from 'react'
+import ignoreWarnings from 'react-native-ignore-warnings'
 import { Ionicons } from '@expo/vector-icons'
 
 import AppContainter from './src/app'
+
+// just a little package to stop unwanted errors from showing
+ignoreWarnings([
+  'Attempted import error',
+  'componentWillReceiveProps has been renamed'
+]);
 
 const App = (props)=>{
   const [isLoadingComplete, setLoadingComplete] = useState(false)

@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import { NavigationContext } from 'react-navigation'
+import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import Layout from '@constants/layout'
 
 import BackIcon from '@components/icons/back'
 
 export default (props) => {
-  const nav = useContext(NavigationContext);
+  const nav = useNavigation()
   return (
     <BackIcon 
       onPress={()=>nav.popToTop()} 
