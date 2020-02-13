@@ -14,10 +14,15 @@ export default function Square(props) {
   if(squareStatus===0){
   	return (
       <View style={styles.item}>
-      	<TouchableOpacity style={styles.button}
-        		onPress={()=>{gameContext.placeMove(props.row, props.col, setSquareStatus)}}>
-            <View style={styles.button}></View>
-      	</TouchableOpacity>
+        {!props.disabled && 
+        	<TouchableOpacity style={styles.button}
+          		onPress={()=>{gameContext.placeMove(props.row, props.col, setSquareStatus)}}>
+              <View style={styles.button}></View>
+        	</TouchableOpacity>
+        }
+        {props.disabled &&
+          <View style={styles.button}></View>
+        }
       </View>
   	)
   }else if(squareStatus<0){
@@ -47,12 +52,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
-  },
-  emptyButton:{
-    width: Layout.innerWidth /3,
-    height: Layout.innerWidth /3,
-    backgroundColor: 'red',
-    borderWidth :1,
-    borderColor: 'black',
   }
 });

@@ -9,7 +9,7 @@ export default (props) => {
   const nav = useContext(NavigationContext);
   return (
     <BackIcon 
-      onPress={()=>nav.navigate('Home')} 
+      onPress={()=>nav.popToTop()} 
       size={50} 
       style={{         
         position: 'absolute',

@@ -22,7 +22,7 @@ export default (props)=> {
             <View style={CommonStyles.row} key={i}>
               {gameContext.board[i].map((item,j)=>{
                 return(
-                  <Square key={j} row={i} col={j} />
+                  <Square key={j} row={i} col={j} disabled={props.disabled}/>
                 )
               })}
             </View>

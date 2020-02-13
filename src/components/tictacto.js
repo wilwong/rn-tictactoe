@@ -14,7 +14,6 @@ import CommonStyles from '@constants/commonStyles'
 
 
 export default (props)=> {
-
   //Create the game and user states and fill them into the context
   const [gameState, dispatch] = useReducer( defaultContext.gameStateReducer, defaultContext.gameState)
   const [playerState, togglePlayerState] = useState(defaultContext.player)
@@ -31,7 +30,7 @@ export default (props)=> {
   return (
     <GameContext.Provider value={defaultContext}>
       <View>
-        <Grid key={gameKey}/>
+        <Grid key={gameKey} disabled={gameState!==0}/>
         {  gameState == 0 &&
           <View style={[CommonStyles.row, styles.displayView]}>
             <PlayerIcon style={{width:Layout.baseFontSize*2.5}}/>
