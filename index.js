@@ -27,6 +27,7 @@ async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([
       require('./assets/grid.png'),
+      require('./assets/tada-sound.mp3'),
     ]),
     Font.loadAsync({
       // This is the font icons that we are using for 

@@ -1,10 +1,13 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer, useState, useEffect } from 'react'
+import { Audio } from 'expo-av'
 import { StyleSheet, View } from 'react-native'
 import { Paragraph, Button } from 'react-native-paper'
 import Circle from '@components/icons/circle'
 import Cross from '@components/icons/cross'
 
-import GameContext, { defaultContext } from '@contexts/gameContexts';
+import TadaSound from '@assets/tada-sound.mp3'
+
+import GameContext, { defaultContext } from '@contexts/gameContexts'
 
 import Grid from './grid.js'
 
@@ -26,6 +29,22 @@ export default (props)=> {
   }
 
   const PlayerIcon = playerState > 0 ? Circle : Cross
+
+  useEffect( () => {
+    const playSound = async ()=>{      
+      try {
+        const soundObject = new Audio.Sound()
+        await soundObject.loadAsync(TadaSound)
+        await soundObject.playAsync()
+      } catch (error) {
+        console.log(error)
+        // error but meh, just log it
+      }
+    }
+    if(gameState!==0) playSound()
+  },
+    [gameState],
+  )
 
   return (
     <GameContext.Provider value={defaultContext}>
