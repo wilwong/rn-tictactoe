@@ -11,7 +11,7 @@ import { StyleSheet, View } from 'react-native';
 // Screens comps of this app
 import HomeScreen from '@screens/home'
 import GameScreen from '@screens/game'
-import SettingsScreen from '@screens/settings'
+import AboutScreen from '@screens/about'
 
 // Theme config for React Native Paper
 import theme from '@constants/paperTheme'
@@ -31,8 +31,8 @@ const AppNavigator = createStackNavigator({
   Game: {
     screen: GameScreen,
   },
-  Settings:{
-    screen: SettingsScreen,
+  About:{
+    screen: AboutScreen,
   }
 }, NavigatorConfigs);
 

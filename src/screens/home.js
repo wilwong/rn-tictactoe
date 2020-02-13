@@ -11,7 +11,7 @@ import Layout from '@constants/layout'
 export default (props) => {
   return (
     <View style={[CommonStyles.container, CommonStyles.pinkBackground]}>
-      <Headline style={styles.headline}> Tic-Tac-T.O. </Headline>
+      <Headline style={styles.headline}> Tic-Tac-TO </Headline>
       <Button 
         style={styles.button}
         mode="contained" 
@@ -28,11 +28,10 @@ export default (props) => {
         2 Players
       </Button>
       <Button 
-        style={styles.button}
-        mode="contained" 
+        style={[styles.button, {marginTop:Layout.marginSize *5}]}
         color="white"
-        onPress={() => props.navigation.navigate('Settings')}>
-        Settings
+        onPress={() => props.navigation.navigate('About')}>
+        About this App
       </Button>
     </View>
   )
