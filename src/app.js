@@ -16,9 +16,9 @@ import AboutScreen from '@screens/about'
 // Theme config for React Native Paper
 import theme from '@constants/paperTheme'
 
-// const AppContainer = createAppContainer(AppNavigator);
 // initiate the Stack Navigator
 const Stack = createStackNavigator()
+
 // Wrap everything up to provivde the basic framework
 // of this app
 export default ()=>{

@@ -5,6 +5,7 @@ import Layout from '@constants/layout'
 
 import BackIcon from '@components/icons/back'
 
+// a general back button for all comps to use
 export default (props) => {
   const nav = useNavigation()
   return (

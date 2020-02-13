@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react'
-import { StyleSheet, View, Text, TouchableOpacity,Image } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native'
 
 import Circle from '@components/icons/circle'
 import Cross from '@components/icons/cross'
@@ -10,14 +10,19 @@ import Layout from '@constants/layout'
 
 export default function Square(props) {
 	const gameContext= useContext(GameContext);
+  
+  // the square keep tracks of its own state
   const [squareStatus, setSquareStatus] = useState(gameContext.board[props.row][props.col]);
+  
+  // conditionally, rendered the played moves
+  // or an empty button that allows the user to place moves
   if(squareStatus===0){
   	return (
       <View style={styles.item}>
         {!props.disabled && 
         	<TouchableOpacity style={styles.button}
-          		onPress={()=>{gameContext.placeMove(props.row, props.col, setSquareStatus)}}>
-              <View style={styles.button}></View>
+          	onPress={()=>{gameContext.placeMove(props.row, props.col, setSquareStatus)}}>
+             <View style={styles.button}></View>
         	</TouchableOpacity>
         }
         {props.disabled &&
@@ -39,6 +44,7 @@ export default function Square(props) {
     )
   }
 }
+
 const styles = StyleSheet.create({
   button:{
     width: '70%',
