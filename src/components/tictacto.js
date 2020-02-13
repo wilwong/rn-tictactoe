@@ -15,6 +15,15 @@ import Layout from '@constants/layout'
 import Colors from '@constants/colors'
 import CommonStyles from '@constants/commonStyles'
 
+const soundObject = new Audio.Sound()
+const loadSound = async () =>{
+  try{
+    await soundObject.loadAsync(TadaSound)
+  }catch(error){
+    console.log(error)
+  }
+}
+
 
 export default (props)=> {
   //Create the game and user states and fill them into the context
@@ -30,11 +39,14 @@ export default (props)=> {
 
   const PlayerIcon = playerState > 0 ? Circle : Cross
 
+  // equivalent to componentDidMount
+  useEffect( () => { loadSound() }, [])
+
+  // equivalent to componentDidUpdate
+  // and runs only if gameState is changed
   useEffect( () => {
     const playSound = async ()=>{      
       try {
-        const soundObject = new Audio.Sound()
-        await soundObject.loadAsync(TadaSound)
         await soundObject.playAsync()
       } catch (error) {
         console.log(error)
