@@ -9,28 +9,28 @@ import Colors from '@constants/colors'
 import Layout from '@constants/layout'
 
 export default (props) => {
+  const {navigation} = props
   return (
     <View style={[CommonStyles.container, CommonStyles.pinkBackground]}>
       <Headline style={styles.headline}> Tic-Tac-TO </Headline>
       <Button 
         style={styles.button}
         mode="contained" 
-        disabled
         color="white"
-        onPress={() => props.navigation.navigate('Game')}>
+        onPress={() => navigation.navigate('Game', {useAI:true})}>
         VS Computer
       </Button>
       <Button
         style={styles.button}
         mode="contained" 
         color="white"
-        onPress={() => props.navigation.navigate('Game')}>
+        onPress={() => navigation.navigate('Game')}>
         2 Players
       </Button>
       <Button 
         style={[styles.button, {marginTop:Layout.marginSize *5}]}
         color="white"
-        onPress={() => props.navigation.navigate('About')}>
+        onPress={() => navigation.navigate('About')}>
         About this App
       </Button>
     </View>

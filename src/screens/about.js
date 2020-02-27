@@ -12,11 +12,14 @@ export default (props) => {
   return (
     <View style={[CommonStyles.container, CommonStyles.pinkBackground]}>
       <BackToHomeButton />
-      <Title style={{color: Colors.text, marginBottom: Layout.marginSize *2}}>
+      <Title style={{color: Colors.text, marginBottom: Layout.marginSize}}>
         TicTacTO v1
       </Title>
+      <Paragraph style={[styles.textContainer, {textAlign:'center'}]}>
+        Proudly made in TOronTO 😃.
+      </Paragraph>
       <Paragraph style={styles.textContainer}>
-        Just a little app to demonstrate how to use React Native hooks. i.e, useState, useContext, useReducer, etc.
+        Just a little demo app for kids. Shows how to use React Native hooks. i.e, useState, useContext, useReducer, etc.
       </Paragraph>
       <Paragraph style={[styles.textContainer, {textAlign:'center'}]}>
         You can view the code here on :

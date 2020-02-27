@@ -1,5 +1,4 @@
 import React, { useReducer, useState, useEffect } from 'react'
-import { Audio } from 'expo-av'
 import { StyleSheet, View } from 'react-native'
 import { Paragraph, Button } from 'react-native-paper'
 
@@ -7,7 +6,7 @@ import { Paragraph, Button } from 'react-native-paper'
 import GameContext, { defaultContext } from '@contexts/gameContexts'
 
 // Assets
-import TadaSound from '@assets/tada-sound.mp3'
+import TadaSound from '@utils/tadaSound'
 
 // import components
 import Grid from './grid.js'
@@ -19,26 +18,8 @@ import Layout from '@constants/layout'
 import Colors from '@constants/colors'
 import CommonStyles from '@constants/commonStyles'
 
-// since the code for playing a sound is short
-// i am just going to leave it here
-const soundObject = new Audio.Sound()
-const loadSound = async () =>{
-  try{
-    await soundObject.loadAsync(TadaSound)
-  }catch(error){
-    console.log(error)
-  }
-}
-const playSound = async ()=>{      
-  try {
-    await soundObject.playAsync()
-  } catch (error) {
-    console.log(error)
-    // error but meh, just log it
-  }
-}
-
 export default (props)=> {
+  console.log(props)
   //Create the game and user states and fill them into the context
   const [gameState, dispatch] = useReducer( defaultContext.gameStateReducer, defaultContext.gameState)
   const [playerState, togglePlayerState] = useState(defaultContext.player)
@@ -51,12 +32,12 @@ export default (props)=> {
   }
 
   // equivalent to componentDidMount
-  useEffect( () => { loadSound() }, [])
+  useEffect( () => { TadaSound.loadSound() }, [])
 
   // equivalent to componentDidUpdate
   // and runs only if gameState is changed
   useEffect( () => {
-    if(gameState!==0) playSound()
+    if(gameState!==0) TadaSound.playSound()
   },
     [gameState],
   )
