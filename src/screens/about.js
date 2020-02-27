@@ -35,7 +35,8 @@ export default (props) => {
 
 const styles = StyleSheet.create({
   textContainer:{
-    width: Layout.width * 0.6,
+    width: '100%',
+    paddingHorizontal: Layout.marginSize * 4,
     color: Colors.text,
     marginBottom: Layout.marginSize 
   }
